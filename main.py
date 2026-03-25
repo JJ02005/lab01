@@ -1,30 +1,19 @@
-from fastapi import FastAPI
-
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 app = FastAPI()
+templates= Jinja2Templates(directory="templates")
 
-@app.get("/home")
-def homepage():
-    return "This is the homepage"
-
-
-@app.get("/{username}")
-def username_webpage(username: str):
-    return f"This is the webpage of user {username}"
-
-
-@app.get("/{username}/orders/{order_id}")
-def orders_webpage(
-        username: str,
-        order_id: int,
-        sort: bool = False
-):
-    return f"Order {order_id} for user {username}, sorted {sort}"
-
-
-@app.get("/{username}/orders/{order_id}")
-def repository_webpage(
-        username: str,
-        order_id: int
-):
-    return f"Order {order_id} for user {username}"
-
+@app.get("/", response_class=HTMLResponse)
+def home(request: Request):
+    """Renders the home page."""
+    text={"title":"Home",
+          "content":"Welcome to my home page.",
+          }
+    context = {
+        "text": text, "sequence": ["a", "b", "c"]}
+    return templates.TemplateResponse(
+        request=request,
+        name= "home.html",
+        context= context
+    )
