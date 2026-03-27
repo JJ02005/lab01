@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Sito Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css')}}">
+
 </head>
 <body>
     <header>
-        <h1>prova sito web</h1>
-        <p>This is a simple FastAPI.</p>
+        <h1>Martina's Shop </h1>
+        <p>First shop in decimo  (AMAZING) !!!.</p>
     </header>
     <nav>
         <a href="/">Home</a>
-        <a href="https://www.google.com/">Google</a>
-        <a href="#">Qualcosaltro</a>
+        <a href="{{url_for('products')}}">Products</a>
+        <a href="{{url_for('add_product')}}">Add Product</a>
+
     </nav>
     <div class="container">
         {% block content%}
-        {% endblock%}
+        {% endblock %}
     </div>
     <footer>
         <p>&copy; 2026 Programmazione Web UNICA</p>

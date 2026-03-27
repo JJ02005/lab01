@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0b0b0b; /* Sfondo scuro profondo */
+    /* Crea un sottile effetto griglia olografica sullo sfondo */
+    background-image: linear-gradient(rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    color: #FCE300; /* Giallo Cyberpunk */
+    line-height: 1.6;
+}
+
+nav {
+    background: #0b0b0b;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-bottom: 3px solid #FF003C; /* Linea rosa neon */
+    box-shadow: 0px 5px 15px rgba(255, 0, 60, 0.4);
+}
+
+nav a {
+    color: #00F0FF; /* Ciano neon */
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+}
+
+nav a:hover {
+    color: #FCE300;
+    text-shadow: 0 0 10px #FCE300;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(11, 11, 11, 0.9);
+    border: 1px solid #00F0FF; /* Bordo ciano */
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+    position: relative;
+}
+
+/* Aggiunge un dettaglio "tech" nell'angolo in alto a sinistra del container */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px;
+    width: 20px; height: 20px;
+    border-top: 3px solid #FCE300;
+    border-left: 3px solid #FCE300;
+}
+
+header {
+    background: #FCE300; /* Giallo iconico come sfondo per impatto visivo */
+    color: #0b0b0b; /* Testo scuro per alto contrasto */
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-bottom: 4px solid #00F0FF;
+    box-shadow: 0 10px 20px rgba(0, 240, 255, 0.2);
+}
+
+header p {
+    font-weight: bold;
+}
+
+footer {
+    background: #0b0b0b;
+    color: #00F0FF;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #FCE300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+/* STILE TABELLE CYBERPUNK */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background: rgba(26, 26, 26, 0.6);
+    border: 1px solid #FF003C;
+    box-shadow: 0 0 15px rgba(255, 0, 60, 0.2);
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 15px;
+    text-align: left;
+    color: #fff; /* Testo bianco per contrasto col ciano e rosa */
+}
+
+th {
+    background: #FF003C; /* Intestazione rosa neon */
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #FCE300; /* Riga gialla di stacco */
+}
+
+tr:nth-child(even) {
+    background: rgba(0, 240, 255, 0.05); /* Leggero tocco ciano alternato */
+}
+
+tr:hover {
+    background: rgba(0, 240, 255, 0.15); /* Si illumina di ciano al passaggio del mouse */
+    color: #FCE300; /* Il testo diventa giallo */
+    box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+/* STILE PER I FORM (product_form.html) */
+input[type="text"], input[type="number"] {
+    background: #1a1a1a;
+    border: 1px solid #00F0FF;
+    color: #FCE300;
+    padding: 10px;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+    width: 100%;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
+
+input[type="submit"], input[type="reset"] {
+    background: #FF003C;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background: #FCE300;
+    color: #0b0b0b;
+    box-shadow: 0 0 15px #FCE300;
+}
