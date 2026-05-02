@@ -40,7 +40,7 @@ def home(request: Request):
         context= context
     )
 products_list = [
-    {"name":"Pistola", "price": 100, "location": "Mexico"},
+    {"name":"Revolver", "price": 100, "location": "Mexico"},
     {"name":"Carabina", "price": 200, "location": "USA"},
     {"name":"Barboncino", "price": 150, "location": "Spain"}
 ]
