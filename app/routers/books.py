@@ -1,7 +1,8 @@
-from fastapi import APIRouter, Path, HTTPException
+from fastapi import APIRouter, Path, HTTPException, Query
 from typing import Annotated
 from app.schemas.book import Book, books # Assicurati che il path sia corretto
 from app.schemas.review import Review
+
 
 # 1. Il router deve stare a inizio riga
 books_router = APIRouter(prefix="/books", tags=["books"])
@@ -57,7 +58,7 @@ def replace_book(
     books[id] = book
     return "Book replaced successfully"
 
-@books_router.delete("/{id}")
+@books_router.delete("/")
 def delete_all_books():
     "Deletes all the stored books"
     books.clear()

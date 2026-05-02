@@ -27,6 +27,6 @@ class Book(BaseModel):
 
 books= {
         0: Book (id=0, title="Il nome della rosa", author="umby eco", review=5),
-        1: Book (id=1, title="Il gioco dei sei", author="umby eco", review=1),
-        2: Book (id=2, title="Il gioco dei sei", author="umby eco", review=5),
+        1: Book(id=1, title="libro uno", author="autore uno", review=5),
+        2: Book(id=1, title="libro due", author="autore due", review=1),
         }
