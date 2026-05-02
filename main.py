@@ -42,7 +42,7 @@ def home(request: Request):
 products_list = [
     {"name":"Pistola", "price": 100, "location": "Mexico"},
     {"name":"Carabina", "price": 200, "location": "USA"},
-    {"name":"Ipad", "price": 150, "location": "Spain"}
+    {"name":"Barboncino", "price": 150, "location": "Spain"}
 ]
 @app.get("/products", response_class=HTMLResponse)
 def products(request: Request):
