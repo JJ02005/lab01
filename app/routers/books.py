@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Path, HTTPException, Query
 from typing import Annotated
-from app.schemas.book import Book, books, BookDB  # Assicurati che il path sia corretto
+from app.schemas.book import Book, books, BookDB
 from app.schemas.review import Review
 from data.db import SessionDep
 from sqlmodel import select, delete
@@ -8,7 +8,7 @@ from sqlmodel import select, delete
 from schemas import book
 from schemas.book import BookPublic, BookCreate
 
-# 1. Il router deve stare a inizio riga
+
 books_router = APIRouter(prefix="/books", tags=["books"])
 
 @books_router.get("/")
@@ -82,21 +82,21 @@ def replace_book(
     return "Book replaced successfully"
 
 @books_router.delete("/")
-    if delete_all_books(session: SessionDep):
+def delete_all_books(session: SessionDep):
     "Deletes all the stored books"
     session.exec(delete(BookDB))
     session.commit()
-        return "All books deleted successfully"
+    return "All books deleted successfully"
 
 @books_router.delete("/{id}")
 def delete_book(
         session: SessionDep,
-    id: Annotated[int, Path(description="The ID of the book to delete")]
+        id: Annotated[int, Path(description="The ID of the book to delete")]
 ):
     """Deletes the book with the given ID"""
     book=session.get(BookDB, id)
     if not book:
         raise HTTPException(status_code=404, detail="Book not found")
     session.delete(book)
-    sessionion.commit()
+    session.commit()
     return "Book deleted successfully"
